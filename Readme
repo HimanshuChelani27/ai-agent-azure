@@ -19,7 +19,7 @@ Before running the application, ensure you have:
 ## Installation
 1. Clone the repository:
    ```sh
-   git clone https://github.com/your-repo/flask-chatbot.git
+   git clone https://github.com/HimanshuChelani27/ai-agent-azure.git
    cd flask-chatbot
    ```
 
