@@ -1,0 +1,78 @@
+# Flask Chatbot with Azure OpenAI
+
+## Overview
+This project is a simple chatbot built using Flask and Azure OpenAI. It maintains chat history for each user and interacts with Azure OpenAI's chat completion API to generate responses.
+
+## Features
+- Uses Azure OpenAI's chat completion API
+- Maintains conversation history for each user
+- Exposes a REST API endpoint for chat interactions
+- Supports configurable AI model deployment
+
+## Prerequisites
+Before running the application, ensure you have:
+- Python installed (>=3.7 recommended)
+- Flask installed (`pip install flask`)
+- OpenAI SDK installed (`pip install openai`)
+- An Azure OpenAI account with an API key and deployment set up
+
+## Installation
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/your-repo/flask-chatbot.git
+   cd flask-chatbot
+   ```
+
+2. Install dependencies:
+   ```sh
+   pip install -r requirements.txt
+   ```
+
+3. Configure Azure OpenAI credentials:
+   - Replace the following placeholders in `app.py` with your actual values:
+     ```python
+     AZURE_OPENAI_ENDPOINT = "YOUR_AZURE_AI_ENDPOINT"
+     AZURE_OPENAI_KEY = "YOUR_AZURE_AI_API_KEY"
+     DEPLOYMENT_NAME = "YOUR_AZURE_AI_API_DEPLOYMENT_NAME"
+     ```
+
+## Usage
+1. Start the Flask application:
+   ```sh
+   python app.py
+   ```
+
+2. Send a POST request to the `/chat` endpoint:
+   ```sh
+   curl -X POST "http://localhost:5000/chat" -H "Content-Type: application/json" -d '{"user_id": "123", "message": "Hello!"}'
+   ```
+
+3. Example JSON response:
+   ```json
+   {
+       "user": "Hello!",
+       "ai": "Hi there! How can I assist you today?"
+   }
+   ```
+
+## API Endpoint
+### `POST /chat`
+- **Description:** Sends a message to the chatbot and receives a response.
+- **Request Body:**
+  ```json
+  {
+      "user_id": "unique_user_id",
+      "message": "User's input message"
+  }
+  ```
+- **Response:**
+  ```json
+  {
+      "user": "User's input message",
+      "ai": "Chatbot's response"
+  }
+  ```
+
+## License
+This project is open-source and available under the MIT License.
+
