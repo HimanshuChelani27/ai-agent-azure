@@ -30,7 +30,7 @@ Installation
 
 Clone the repository:
 
-git clone https://github.com/your-repo/flask-chatbot.git
+git clone https://github.com/HimanshuChelani/ai-agent-azure.git
 cd flask-chatbot
 
 Install dependencies:
