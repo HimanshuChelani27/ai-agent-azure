@@ -20,9 +20,6 @@ client = openai.AzureOpenAI(
 chat_history = {}
 
 def chat_with_ai(user_id, user_input):
-    """
-    Sends a user message to Azure OpenAI while maintaining conversation history.
-    """
     if user_id not in chat_history:
         chat_history[user_id] = [
             {"role": "system", "content": "You are a helpful AI assistant that remembers the conversation."}
@@ -49,9 +46,6 @@ def chat_with_ai(user_id, user_input):
 
 @app.route("/chat", methods=["POST"])
 def chat():
-    """
-    API endpoint to handle chat requests.
-    """
     data = request.json
     user_id = data.get("user_id", "default_user")  # Default user if not provided
     user_input = data.get("message", "")
